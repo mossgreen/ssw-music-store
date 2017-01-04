@@ -29,6 +29,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
+import {AlbumService} from './services/album/album.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,7 @@ import { HomeComponent } from './home/home.component';
     PortalModule.forRoot(),
     RtlModule.forRoot(),
   ],
-  providers: [],
+  providers: [AlbumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
