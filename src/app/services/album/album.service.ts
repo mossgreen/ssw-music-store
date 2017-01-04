@@ -12,9 +12,22 @@ export class AlbumService {
 
   constructor(private _http: Http) { }
 
-  getPopularAlbums(): Observable<Album[]>{
+  getPopularAlbums(): Observable<Album[]> {
     return this._http.get(API_BASE + `/popular`)
-    .map((response:Response) => response.json())
+      .map((response: Response) => response.json())
   }
 
+  search(val: string): Observable<Album[]> {
+    return this._http
+      .get(API_BASE + `/ablums/${val}`)
+      .retry(2)
+      .map((response: Response) => response.json())
+      .catch(this.handleError);
+  }
+
+  private handleError(error: any) {
+    let errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    console.error(errMsg);
+    return Observable.of(<Album[]>[]);
+  }
 }
