@@ -30,11 +30,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import {AlbumService} from './services/album/album.service';
+import { AlbumSummaryComponent } from './album-summary/album-summary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AlbumSummaryComponent
   ],
   imports: [
     BrowserModule,
