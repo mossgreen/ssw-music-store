@@ -15,8 +15,8 @@ import {AlbumService} from '../services/album/album.service';
 
 @Component({
   selector: 'app-search',
-  templateUrl: 'search.component.html',
-  styleUrls: ['search.component.css']
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
 
 export class SearchComponent {
