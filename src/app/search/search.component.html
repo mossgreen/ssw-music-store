@@ -1,5 +1,5 @@
 <md-card>
-  <md-input type="text" class="form-control" placeholder="Search for a genre..." [ngModel]="searchText" (ngModelChange)="searchTextChange(1event)"
+  <md-input type="text" class="form-control" placeholder="Search for a genre..." [ngModel]="searchText" (ngModelChange)="searchTextChange($event)"
     #genre> <!--#genre attribute means that the rest of this template can use the variable genre to get at the md-input's properties. -->
   </md-input>
 
