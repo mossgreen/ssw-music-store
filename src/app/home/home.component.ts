@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
       .subscribe(albums => this.albums = albums)
   };
 
-  goToAlbumDetail(album:Album){}
+  goToAlbumDetail(album: Album) {
+}
 
 
 }
