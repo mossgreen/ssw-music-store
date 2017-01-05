@@ -27,10 +27,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+
+import {AlbumService} from './services/album/album.service';
+import { AlbumSummaryComponent } from './album-summary/album-summary.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AlbumSummaryComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +67,7 @@ import { AppComponent } from './app.component';
     PortalModule.forRoot(),
     RtlModule.forRoot(),
   ],
-  providers: [],
+  providers: [AlbumService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
