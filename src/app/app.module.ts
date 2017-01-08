@@ -35,6 +35,7 @@ import { SearchComponent } from './search/search.component';
 import { AlbumComponent } from './album/album.component';
 
 import { routing } from './app.routing';
+import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { routing } from './app.routing';
     AlbumSummaryComponent,
     SearchComponent,
     AlbumComponent,
+    AlbumDetailComponent,
   ],
   imports: [
     BrowserModule,
