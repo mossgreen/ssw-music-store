@@ -31,4 +31,9 @@ export class AlbumService {
     console.error(errMsg);
     return Observable.of(<Album[]>[]);
   }
+
+  getAlbum(id:number):Observable<Album>{
+    return this._http.get(API_BASE+'/albums/details/${id}')
+    .map((response:Response) => response.json());
+  }
 }
