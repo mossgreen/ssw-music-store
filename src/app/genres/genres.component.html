@@ -1,3 +1,14 @@
-<p>
-  genres works!
-</p>
+<div class="card-container">
+  <md-card>
+    <md-progress-bar *ngIf="isLoading" mode="indeterminate">
+      <md-nav-list>
+        <a href="" md-list-item *ngFor="let genre of genres" (click)="goToGenre(genre)">
+          {{genre.name}}
+        </a>
+        </md-nav-list>
+    </md-progress-bar>
+  </md-card>
+  <div class="album-row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
