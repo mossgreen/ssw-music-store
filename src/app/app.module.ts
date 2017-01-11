@@ -39,6 +39,7 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
 import {GenreService} from './services/genre/genre.service';
 import { GenresComponent } from './genres/genres.component';
+import { GenreDetailComponent } from './genre-detail/genre-detail.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { GenresComponent } from './genres/genres.component';
     AlbumComponent,
     AlbumDetailComponent,
     GenresComponent,
+    GenreDetailComponent,
   ],
   imports: [
     BrowserModule,
