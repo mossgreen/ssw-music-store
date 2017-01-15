@@ -37,6 +37,10 @@ import { AlbumComponent } from './album/album.component';
 import { routing } from './app.routing';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
+import {GenreService} from './services/genre/genre.service';
+import { GenresComponent } from './genres/genres.component';
+import { GenreDetailComponent } from './genre-detail/genre-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +49,8 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
     SearchComponent,
     AlbumComponent,
     AlbumDetailComponent,
+    GenresComponent,
+    GenreDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +80,7 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
     RtlModule.forRoot(),
     routing,
   ],
-  providers: [AlbumService],
+  providers: [AlbumService,GenreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

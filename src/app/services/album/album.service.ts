@@ -33,7 +33,7 @@ export class AlbumService {
   }
 
   getAlbum(id:number):Observable<Album>{
-    return this._http.get(API_BASE+'/albums/details/${id}')
+    return this._http.get(API_BASE+`/albums/details/${id}`)
     .map((response:Response) => response.json());
   }
 }
