@@ -40,7 +40,7 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import {GenreService} from './services/genre/genre.service';
 import { GenresComponent } from './genres/genres.component';
 import { GenreDetailComponent } from './genre-detail/genre-detail.component';
-
+import {AuthService} from './services/auth/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +80,7 @@ import { GenreDetailComponent } from './genre-detail/genre-detail.component';
     RtlModule.forRoot(),
     routing,
   ],
-  providers: [AlbumService,GenreService],
+  providers: [AlbumService,GenreService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
