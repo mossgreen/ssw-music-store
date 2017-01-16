@@ -24,7 +24,7 @@ export class AuthService {
       localStorage.setItem('id_token', authResult.idToken);
 
       //Fetch profile information
-      this.lock.getprofile(authResult.idToken, (error, profile) => {
+      this.lock.getProfile(authResult.idToken, (error, profile) => {
         if (error) {
           //handle error
           alert(error);
