@@ -47,7 +47,8 @@ import {AUTH_PROVIDERS} from 'angular2-jwt';
 
 import {Http} from '@angular/http';
 import {RequestOptions} from '@angular/http';
-import {AuthHttp,AuthConfig} from 'angular2-jwt'
+import {AuthHttp,AuthConfig} from 'angular2-jwt';
+import { CartComponent } from './cart/cart.component'
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
     tokenName: 'token',
@@ -66,6 +67,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     AlbumDetailComponent,
     GenresComponent,
     GenreDetailComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
