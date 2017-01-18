@@ -41,6 +41,22 @@ import {GenreService} from './services/genre/genre.service';
 import { GenresComponent } from './genres/genres.component';
 import { GenreDetailComponent } from './genre-detail/genre-detail.component';
 import {AuthService} from './services/auth/auth.service';
+
+import {CartService} from './services/cart/cart.service';
+import {AUTH_PROVIDERS} from 'angular2-jwt';
+
+import {Http} from '@angular/http';
+import {RequestOptions} from '@angular/http';
+import {AuthHttp,AuthConfig} from 'angular2-jwt';
+import { CartComponent } from './cart/cart.component'
+export function authHttpServiceFactory(http: Http, options: RequestOptions) {
+  return new AuthHttp(new AuthConfig({
+    tokenName: 'token',
+          tokenGetter: (() => localStorage.getItem('token')),
+          globalHeaders: [{'Content-Type':'application/json'}],
+     }), http, options);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +67,7 @@ import {AuthService} from './services/auth/auth.service';
     AlbumDetailComponent,
     GenresComponent,
     GenreDetailComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +97,11 @@ import {AuthService} from './services/auth/auth.service';
     RtlModule.forRoot(),
     routing,
   ],
-  providers: [AlbumService,GenreService,AuthService],
+  providers: [AlbumService,GenreService,AuthService,CartService,{
+      provide: AuthHttp,
+      useFactory: authHttpServiceFactory,
+      deps: [Http, RequestOptions]
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

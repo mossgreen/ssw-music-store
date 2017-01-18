@@ -1,4 +1,4 @@
-<img src="assets/img/banner-image-sale.png" alt="banner image" class="jumbotron">
+<img src="assets/img/banner-image-sale.png" alt="banner image" class="jumbotron" class="img-responsive">
 <app-search (selected)="goToAlbumDetail($event)"></app-search>
 <div class="card-container">
     <app-album-summary *ngFor="let album of albums" [album]="album" (click)="goToAlbumDetail(album)"> 

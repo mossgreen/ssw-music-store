@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Album } from '../models';
 import { AlbumService } from './../services/album/album.service';
+import {CartService} from '../services/cart/cart.service';
+
 
 @Component({
   selector: 'app-album',
@@ -16,7 +18,8 @@ export class AlbumComponent implements OnInit, OnDestroy {
   constructor(
     private _albumService: AlbumService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _cartService: CartService,
   ) { }
 
   ngOnInit() {
@@ -39,6 +42,11 @@ export class AlbumComponent implements OnInit, OnDestroy {
       e => console.error(`${e}`));
   }
 
-  addToCart(album: Album) { }
+      addToCart(album: Album) {
+        this._cartService.addCartItem(album)
+            .subscribe((cart) => {
+                this._router.navigate([`/cart`]);
+        });
+    }
 
 }

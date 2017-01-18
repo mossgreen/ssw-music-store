@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AlbumComponent } from './album/album.component';
 import { GenresComponent } from './genres/genres.component';
 import { GenreDetailComponent } from './genre-detail/genre-detail.component';
+import {CartComponent} from './cart/cart.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
             { path: ':name', component: GenreDetailComponent }
         ]
     },
+    {path:'cart',component:CartComponent},
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
