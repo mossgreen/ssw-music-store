@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.getCart();
+    alert('hi');
   }
 
   getCart() {
