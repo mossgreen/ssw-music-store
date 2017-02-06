@@ -1,3 +1,5 @@
+//Models in this file will be used by Service
+
 export class Album{
     albumId:number;
     title:string;

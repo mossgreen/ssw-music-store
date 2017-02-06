@@ -97,6 +97,13 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     RtlModule.forRoot(),
     routing,
   ],
+
+  /**
+   * We add providers to the app NgModule
+   * so a single instance will be available to the entire app
+   * if we add the provider to a child module, 
+   * it would receive it's own instance. this is more useful for the data storage servcies
+   */
   providers: [AlbumService,GenreService,AuthService,CartService,{
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,

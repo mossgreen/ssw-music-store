@@ -11,6 +11,7 @@ export class GenreService{
   albums:Album[] = [];
   constructor(private _http:Http){}
 
+//this method returns an Observable
   getGenres():any{
     return this._http.get(API_BASE+`/genres`)
     .map((response:Response) => response.json());
